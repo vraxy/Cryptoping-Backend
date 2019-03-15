@@ -4,7 +4,7 @@
   	<title>Crypto Pings</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <link rel="icon" type="image/x-icon" href="https://localhost:3000/images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -125,7 +125,7 @@ span.twitter-typeahead {
     height:     100%;
     width:      100%;
     background: rgba( 255, 255, 255, .8 ) 
-                url('https://localhost:3000/images/ajax-loader.gif') 
+                url('/images/ajax-loader.gif') 
                 50% 50% 
                 no-repeat;
 }
@@ -199,7 +199,7 @@ function delayload() {
        
       }
     }
-    xmlhttp.open("GET", "https://localhost:3000/error", true);
+    xmlhttp.open("GET", "/error", true);
     xmlhttp.setRequestHeader("Access-Control-Allow-Origin", "*");
     xmlhttp.send(form_data);
     $('#myForm').trigger("reset");
@@ -214,6 +214,7 @@ function delayload() {
     <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
     <script>$(document).ready(function() { $('body').bootstrapMaterialDesign(); });</script>
 
-	<h3> Oh !! Nothing here yet. No pings Recieved. </h3>
+	<h1> Oh !! Nothing here yet. No pings Recieved. WebSocket wss://api.cryptoping.com/store. not active yet. </h1>
+	<h3> WebSocket returned a null value with no actual data. <h3>
 </body>
 </html>
