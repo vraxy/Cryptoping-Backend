@@ -21,7 +21,7 @@ const redis = require('redis');
 
 // Encrypt cookies while setting. Decrypt cookies while using.
 const Cryptr = require('cryptr');
-var SecretKey = randomstring.generate({  length: 25 ,  charset: 'alphabetic' });
+var SecretKey = randomstring.generate({  length: 64 ,  charset: 'alphabetic' });
 const cryptr = new Cryptr(SecretKey);
 
 // HTTP Headers.
