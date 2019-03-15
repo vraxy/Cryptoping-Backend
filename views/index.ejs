@@ -239,6 +239,43 @@ function delayanimate() {
     		<span class="bmd-help">Your Account Password.</span>
   		</div>
     </div>
+	 <div class="form-row danger">
+      <div class="form-group col-md-3">
+        <label for="User_Name" class="bmd-label-floating">Volume Ticker</label>
+        <div><input type="text" class="form-control typeahead" name="User_Name"></div>
+        <span class="bmd-help">Mention Ticker Threshold.</span>
+      </div>
+  		<div class="form-group col-md-3">
+    		<label for="User_Password" class="bmd-label-floating">Price Ticker</label>
+    		<div><input type="text" class="form-control typeahead" name="User_Password"></div>
+    		<span class="bmd-help">Mention Ticker Threshold.</span>
+  		</div>
+		<div class="form-group col-md-3">
+    		<label for="User_Password" class="bmd-label-floating">Cryptocurrency Exchange.</label>
+    		<div><input type="text" class="form-control typeahead" name="User_Password"></div>
+    		<span class="bmd-help">Mention Exchange Name.</span>
+  		</div>
+		<div class="form-group col-md-3">
+    		<label for="User_Password" class="bmd-label-floating">Mobile Number.</label>
+    		<div><input type="text" class="form-control typeahead" name="User_Password"></div>
+    		<span class="bmd-help">Allow Ping notifications below.</span>
+  		</div>
+    </div>
+	      <div class="switch">
+        <label>
+          <input type="checkbox" name="Volume_Ticker"> Volume Ticker Ping only.
+        </label>
+      </div>
+	        <div class="switch">
+        <label>
+          <input type="checkbox" name="Price_Ticker"> Price Ticker Ping only.
+        </label>
+      </div>
+	        <div class="switch">
+        <label>
+          <input type="checkbox" name="Both_Ticker"> Both Price or Volume Ticker.
+        </label>
+      </div>
       <div class="switch">
         <label>
           <input type="checkbox" name="Remember_Login" data-toggle="modal" data-target="#exampleModalLong"> Remember Credentials and other details.
@@ -249,7 +286,8 @@ function delayanimate() {
       </span>
 	</form>
   <button type="submit" class="btn btn-primary btn-raised btn-success btn-lg" onclick="delayload()" >Login and Ping</button>
-<a href="/formdata"><div class="btn btn-primary btn-raised btn-info btn-lg" onclick="delayanimate()">Populate Ping Data</div></a><hr>
+<a href="/formdata"><div class="btn btn-primary btn-raised btn-info btn-lg" onclick="delayanimate()">Populate Ping Data below</div></a>
+<a href="/formdata"><div class="btn btn-primary btn-danger btn-info btn-lg" onclick="delayanimate()">Allow Chrome notifications on mobile.</div></a><hr>
 <!-- Modal -->
 <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -289,42 +327,89 @@ function delayanimate() {
 	<td>512254</td>
 	<td>3152.66</td>
 	<td>Low [-2.33]</td>
+	<td>
+			      <div class="switch">
+        <label>
+          <input type="checkbox" name="Volume_Ticker"> Get Notified
+        </label>
+	</td>
   </tr>
   <tr>
     <td>Poloniex</td>
     <td>Bitcoin</td>
     <td></td>
 	<td></td><td></td><td></td>
+	<td>
+			      <div class="switch">
+        <label>
+          <input type="checkbox" name="Volume_Ticker"> Get Notified
+        </label>
+	</td>
   </tr>
   <tr>
     <td>BitFlyer</td>
     <td>Ethereum</td>
-    <td></td><td></td><td></td><td></td>
+    <td></td><td></td><td></td><td></td><td>
+			      <div class="switch">
+        <label>
+          <input type="checkbox" name="Volume_Ticker"> Get Notified
+        </label>
+	</td>
   </tr>
     <tr>
     <td>BitFlyer</td>
     <td>OK Coin</td>
     <td></td><td></td><td></td><td></td>
+	<td>
+			      <div class="switch">
+        <label>
+          <input type="checkbox" name="Volume_Ticker"> Get Notified
+        </label>
+	</td>
   </tr>
     <tr>
     <td>BitFlyer</td>
     <td>Dash</td>
     <td></td><td></td><td></td><td></td>
+	<td>
+			      <div class="switch">
+        <label>
+          <input type="checkbox" name="Volume_Ticker"> Get Notified
+        </label>
+	</td>
   </tr>
     <tr>
     <td>BitFlyer</td>
     <td>OmiseGO</td>
     <td></td><td></td><td></td><td></td>
+	<td>
+			      <div class="switch">
+        <label>
+          <input type="checkbox" name="Volume_Ticker"> Get Notified
+        </label>
+	</td>
   </tr>
     <tr>
     <td>Binance</td>
     <td>DogeCoin</td>
     <td></td><td></td><td></td><td></td>
+	<td>
+			      <div class="switch">
+        <label>
+          <input type="checkbox" name="Volume_Ticker"> Get Notified
+        </label>
+	</td>
   </tr>
   <tr>
     <td>Changelly</td>
     <td>USD Coin</td>
     <td></td><td></td><td></td><td></td>
+	<td>
+			      <div class="switch">
+        <label>
+          <input type="checkbox" name="Volume_Ticker"> Get Notified
+        </label>
+	</td>
   </tr>
 </table>
 </div>
