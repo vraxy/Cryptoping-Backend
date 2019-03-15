@@ -84,17 +84,17 @@ app.get('/error', errorPage);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   res.locals.query = "Page requested in not there yet.";
-  res.locals.success = "Execution returned error 0x80007ebac ";
+  res.locals.success = "Execution returned error. ";
   next(createError(404));
 });
 
 // error handler
 app.use(function(err, req, res, next) {
-  res.locals.query = "Some error occured. It is not a problem with the web application, your data caused error. Please check error details below.";
+  res.locals.query = "Some error occured. WebSocket wss://api.cryptoping.com/store not active. Please check error details below.";
   res.locals.message = err.message;
   res.locals.error = err;
   res.locals.status = err.status === "" ? "50x" : 500;
-  res.locals.success = "Execution returned error 0x80007efbc ";
+  res.locals.success = "Execution returned error. ";
   res.render('error');
 });
 
