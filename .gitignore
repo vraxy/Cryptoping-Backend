@@ -9,7 +9,6 @@ obj/
 Obj/
 bower_packages/
 node_modules/
-certificates/
 package-lock.json
 
 # Other files and folders
