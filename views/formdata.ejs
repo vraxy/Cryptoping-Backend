@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  	<title>Crypto Pings</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <link rel="icon" type="image/x-icon" href="https://localhost:3000/images/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="msapplication-tap-highlight" content="no">
+    <link rel="apple-touch-icon-precomposed" href="images/favicon/apple-touch-icon-152x152.png">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="images/favicon/mstile-144x144.png">
+    <link rel="icon" href="images/favicon/favicon-32x32.png" sizes="32x32">
+    <!--  Android 5 Chrome Color-->
+    <meta name="theme-color" content="#EE6E73">
+    <!-- Material Design for Bootstrap fonts and icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <!-- Material Design for Bootstrap CSS-->
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+    <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
+    <script src="https://localhost:3000/ace-builds-master/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+    <!-- Material Design for Bootstrap fonts and icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.11.1/typeahead.bundle.min.js"></script>
+    <script type="text/javascript" src="https://twitter.github.io/typeahead.js/js/handlebars.js"></script>
+<style>
+    #query_editor {
+      position: relative;
+      width: 1750px;
+      height: 250px;
+    }
+.typeahead {
+    z-index: 10;
+}
+
+/*If using icon span before input, like <i class="fa fa-asterisk prefix"></i>*/
+span.twitter-typeahead {
+    width: calc(100%);
+    margin-left: 0rem;
+}
+/* Aspect of the dropdown of results*/
+
+/*Aspect of results, done*/
+span.twitter-typeahead .tt-suggestion {
+    color: #4285F4;
+    cursor: pointer;
+    padding: 1rem;
+    text-transform: capitalize;
+    font-weight: 400;
+}
+
+.dropdown-menu, span.twitter-typeahead .tt-menu {
+  min-width: 100%;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  float: left;
+  padding: 5px 0;
+  margin: 2px 0 0;
+  font-size: 1rem;
+  color: #8c8c8c;
+  text-align: left;
+  list-style: none;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: none;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12);
+  border-radius:  0.35rem; }
+
+span.twitter-typeahead .tt-suggestion {
+  display: block;
+  width: 100%;
+  padding: 3px 20px;
+  clear: both;
+  font-weight: normal;
+  line-height: 1.5;
+  color: #00cc66;
+  text-align: inherit;
+  white-space: nowrap;
+  background: none;
+  border: none; }
+span.twitter-typeahead .tt-suggestion:focus, .dropdown-item:hover, span.twitter-typeahead .tt-suggestion:hover {
+    color: #00cc66;
+    text-decoration: none;
+    background-color: #f5f5f5; }
+span.twitter-typeahead .active.tt-suggestion, span.twitter-typeahead .tt-suggestion.tt-cursor, span.twitter-typeahead .active.tt-suggestion:focus, span.twitter-typeahead .tt-suggestion.tt-cursor:focus, span.twitter-typeahead .active.tt-suggestion:hover, span.twitter-typeahead .tt-suggestion.tt-cursor:hover {
+    color: #00cc66;
+    text-decoration: none;
+    background-color: #0275d8;
+    outline: 0; }
+span.twitter-typeahead .disabled.tt-suggestion, span.twitter-typeahead .disabled.tt-suggestion:focus, span.twitter-typeahead .disabled.tt-suggestion:hover {
+    color: #00cc66; }
+span.twitter-typeahead .disabled.tt-suggestion:focus, span.twitter-typeahead .disabled.tt-suggestion:hover {
+    text-decoration: none;
+    cursor: not-allowed;
+    background-color: transparent;
+    background-image: none;
+    filter: "progid:DXImageTransform.Microsoft.gradient(enabled = false)"; }
+span.twitter-typeahead {
+  width: 100%; }
+  .input-group span.twitter-typeahead {
+    display: block !important; }
+    .input-group span.twitter-typeahead .tt-menu {
+      top: 2.375rem !important; }
+
+.spinner{
+    display:    none;
+    position:   fixed;
+    z-index:    1000;
+    top:        0;
+    left:       0;
+    height:     100%;
+    width:      100%;
+    background: rgba( 255, 255, 255, .8 ) 
+                url('https://localhost:3000/images/ajax-loader.gif') 
+                50% 50% 
+                no-repeat;
+}
+
+body.loading {
+    overflow: hidden;   
+}
+
+body.loading .spinner {
+    display: block;
+}
+
+.SuggestEngine {
+  margin: 0 20px 5px 20px;
+  padding: 10px 0;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+
+$('.typeahead').on('focus', function() {
+    $(this).parent().siblings().addClass('active');
+}).on('blur', function() {
+    if (!$(this).val()) {
+        $(this).parent().siblings().removeClass('active');
+    }
+});
+
+var suggestions = ['Brother', 'brother', 'mother', 'sister', 'father', 'spouse', 'Father', 'Sunny', 'Jessica', '16x Ampitheatre Road', 'Sunny Seasons Apartment', 'Kolkata', 'Karnataka', 'Jessore Road, Hyderabad', 'Sen', 'Wojksi', 'Pelman', 'Strauss', 'Ruby', 'Anand', 'Sharmesh', 'Shuvradeep','Rahul', 'Lahiri','Ravi', 'Gurmeet', 'Gurpreet', 'Anil', 'Mike', 'Manohar', 'Mohan', 'Bellaire', 'Houston', 'Michigan', 'Kernighan', 'Belmonte', '631, Hudson Bay, California', '554122365', '965244123','888544125', '885688521', '774155632', '663211452', '778511250', '784512596', '895415235', '965411523', '996521457','458566521','845233652', '695411253', '552148756', '663254125', '448596321', '996523221', '863214596', '236522145', '332541269', '152245963', '263255147', '5600000',  '13560000', '36000', '9655000', '6320040'];
+
+var suggestions = new Bloodhound({
+    datumTokenizer: Bloodhound.tokenizers.whitespace,
+    queryTokenizer: Bloodhound.tokenizers.whitespace,
+    local: suggestions
+});
+$('.typeahead').typeahead({
+    highlight: true,
+    hint: true,
+    minLength: 1
+}, {
+    name: 'suggestions',
+    source: suggestions,
+    limit: 6,
+    templates: {
+      header: '<h6 class="SuggestEngine"> Trie Suggests : </h6>'
+    }
+  });
+});
+
+function delayload() {
+  $body = $("body");
+  var timeDelay = 1000;
+  setTimeout(DataLoad, timeDelay);
+  $body.addClass("loading"); 
+}
+  function DataLoad(){
+    $body = $("body");
+    if(window.XMLHttpRequest){ 
+      var xmlhttp = new XMLHttpRequest();
+    }
+    else{ 
+      var xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    var myForm = document.getElementById("myForm");
+    var form_data = new FormData(myForm);
+    xmlhttp.onreadystatechange = function(){
+    if (xmlhttp.readyState == 2){ $body.addClass("loading"); }
+    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+        $body.removeClass("loading");
+    } else {
+       
+      }
+    }
+    xmlhttp.open("GET", "https://localhost:3000/error", true);
+    xmlhttp.setRequestHeader("Access-Control-Allow-Origin", "*");
+    xmlhttp.send(form_data);
+    $('#myForm').trigger("reset");
+  }
+</script>
+  </head>
+  <body>
+  <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
+    <script>$(document).ready(function() { $('body').bootstrapMaterialDesign(); });</script>
+
+	<h3> Oh !! Nothing here yet. No pings Recieved. </h3>
+</body>
+</html>
