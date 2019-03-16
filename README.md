@@ -2,7 +2,7 @@
 
 Heroku Hosted Demo Application.
 
-[CryptoPing](https://cryptoping.heroku.com/)
+[CryptoPing](https://cryptoping.herokuapp.com/)
 
 ### CryptoPing Application
 
