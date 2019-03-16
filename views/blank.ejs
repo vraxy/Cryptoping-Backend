@@ -3,7 +3,7 @@
 <table class="table">
   <thead class="table-success">
     <tr>
-      <th scope="col"></th>
+		<th scope="col"></th>
         <% for (var key in data[item][0])  { %>
         <th scope="col"><%= key %></th>
         <% } %>
@@ -11,7 +11,7 @@
   </thead>
   <tbody>
   <% for (var i = 0; i < data[item].length; i++) { %>
-    <tr>
+	<tr>
         <td scope="row"><%= i %></td>
         <% for (var key in data[item][i]) { %>
         <% var value = data[item][i][key] %>
