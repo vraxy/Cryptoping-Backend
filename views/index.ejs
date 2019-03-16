@@ -24,7 +24,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
     <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
-    <script src="https://localhost:3000/ace-builds-master/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/ace-builds-master/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
     <!-- Material Design for Bootstrap fonts and icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
@@ -144,6 +144,23 @@ body.loading .spin {
 }
 </style>
 <script type="text/javascript">
+
+$(document).ready(function() {
+  if (!("Notification" in window)) {
+    alert("This browser does not support desktop notification");
+  }
+	else {
+		    Notification.requestPermission(function (permission) {
+      if(!('permission' in Notification)) {
+        Notification.permission = permission;
+      }
+      if (permission === "granted") {
+        var notification = new Notification("Cryptoping notifications are now allowed.!!");
+      }
+	});
+	}
+});
+
 $(document).ready(function(){
 $('.typeahead').on('focus', function() {
     $(this).parent().siblings().addClass('active');
@@ -152,7 +169,7 @@ $('.typeahead').on('focus', function() {
         $(this).parent().siblings().removeClass('active');
     }
 });
-var suggestions = ['127.0.0.1', '192.168.0.0', '127.0.0.2', 'localhost', 'root', 'rootdb', 'employee_info', 'sumit', 'server_db', '192.168.0.1', 'mysql', 'MySQL', Sandeep, John, Michel];
+var suggestions = ['5', '3', '1', 'Nova Exchange', 'LiteCoin', 'sumit', 'server_db', '192.168.0.1', 'mysql', 'MySQL', 'Sumit', 'Lahiri','Sandeep', 'John', 'Michel', 'Bittrex', 'Poloniex', 'Bitcoin', 'Ethereum', 'DogeCoin'];
 var suggestions = new Bloodhound({
     datumTokenizer: Bloodhound.tokenizers.whitespace,
     queryTokenizer: Bloodhound.tokenizers.whitespace,
@@ -219,18 +236,15 @@ function delayanimate() {
 
 <script type="text/javascript">
     $(document).ready(function(){
-      refreshTable();
+	  refreshTable();
     });
 
     function refreshTable(){
         $('#table').load('/bittrex', function(){
-           setTimeout(refreshTable, 100);
+		   var notification = new Notification("Table Updated.");
+           setTimeout(refreshTable, 1000);
         });
     }
-
-	function nots(){
-		alert("Allowing Chrome notifications.");
-	}
 </script>
 
 
@@ -303,9 +317,8 @@ function delayanimate() {
         <!--button type="submit" class="btn btn-primary btn-raised btn-success btn-lg">Submit Query</button> -->
       </span>
 	</form>
-  <button type="submit" class="btn btn-primary btn-raised btn-success btn-lg" onclick="delayload()" >Login and Ping</button>
+<a href="/"><button type="submit" class="btn btn-primary btn-raised btn-success btn-lg" onclick="Dataload()" >Login and Ping</button></a>
 <a href="/"><div class="btn btn-primary btn-raised btn-info btn-lg" onclick="delayanimate()">Populate Ping Data below</div></a>
-<a><div class="btn btn-primary btn-danger btn-info btn-lg" onclick="nots()">Allow Chrome notifications on mobile.</div></a><hr>
 <!-- Modal -->
 <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
   <div class="modal-dialog" role="document">
