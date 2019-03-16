@@ -1,4 +1,6 @@
 var createError = require('http-errors');
+var cors = require('cors');
+var request = require('request');
 var express = require('express');
 var bodyParser = require('body-parser');
 var path = require('path');
@@ -8,6 +10,7 @@ var logger = require('morgan');
 var getIndexPage = require('./routes/index');
 var formDataPage = require('./routes/formdata');
 var respDataPage = require('./routes/response');
+var bittrex = require('./routes/bittrex');
 var errorPage = require('./routes/error');
 var mysql = require('mysql');
 var randomstring = require("randomstring");
@@ -74,9 +77,13 @@ app.use(cookieParser());
 app.set('json spaces', 4); 
 
 // GET method route
+
+app.use(cors());
+
 app.get('/', getIndexPage);
+
 app.get('/home', getIndexPage);
-app.get('/data', formDataPage);
+app.get('/bittrex', bittrex);
 app.get('/formdata', formDataPage);
 app.get('/response', respDataPage);
 app.get('/error', errorPage);

@@ -1,15 +1,15 @@
-var express = require('express');
+﻿var express = require('express');
 var router = express.Router();
 var request = require('request');
 
-router.get('/', function (req, res) {
+router.get('/bittrex', function (req, res) {
     request('https://api.bittrex.com/api/v1.1/public/getmarketsummaries', function (error, response, body) {
         if (!error && response.statusCode === 200) {
             var check = "";
             var query = "";
             var success = "";
             var data = JSON.parse(body);
-            res.render('index', { data, query, success, check });
+            res.render('blank', { data, query, success, check });
         }
     })
 });

@@ -1,0 +1,25 @@
+﻿<% for (var item in data) { %>
+<div class="table-responsive">
+<table class="table">
+  <thead class="table-success">
+    <tr>
+      <th scope="col"></th>
+        <% for (var key in data[item][0])  { %>
+        <th scope="col"><%= key %></th>
+        <% } %>
+    </tr>
+  </thead>
+  <tbody>
+  <% for (var i = 0; i < data[item].length; i++) { %>
+    <tr>
+        <td scope="row"><%= i %></td>
+        <% for (var key in data[item][i]) { %>
+        <% var value = data[item][i][key] %>
+        <td><%= value %></td>
+        <% } %>
+    </tr>
+<% } %>
+</tbody>
+</table>
+</div>
+<% } %>
