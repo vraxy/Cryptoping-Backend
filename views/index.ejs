@@ -224,7 +224,7 @@ function delayanimate() {
 
     function refreshTable(){
         $('#table').load('/bittrex', function(){
-           setTimeout(refreshTable, 1000);
+           setTimeout(refreshTable, 100);
         });
     }
 </script>
