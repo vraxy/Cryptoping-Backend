@@ -51,11 +51,11 @@ app.use(function (req, res, next) {
 app.use(responseTime());
 
 const middlewares = [
-  express.static(path.join(__dirname, 'public')),
-  express.static(path.join(__dirname, 'ace-builds-master')),
-  bodyParser.urlencoded({ extended: false }), 
-  bodyParser.json() 
-]
+    express.static(path.join(__dirname, 'public')),
+    express.static(path.join(__dirname, 'ace-builds-master')),
+    bodyParser.urlencoded({ extended: false }),
+    bodyParser.json()
+];
 
 app.use(middlewares);
 
