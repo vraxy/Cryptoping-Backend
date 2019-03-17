@@ -25,7 +25,9 @@
         < data.result.length; i++) {%>
         <tr class="table-success">
           <td scope="row">
-            <%= data.result[i].MarketName %>
+            <code style="color:blue">
+              <%= data.result[i].MarketName %>
+            </code>
           </td>
           <td scope="row">
             <%= data.result[i].High %>
@@ -37,14 +39,18 @@
             <%= data.result[i].Last %>
           </td>
           <td scope="row">
-            <%= data.result[i].Volume %>
+            <code style="color:green">
+              <%= data.result[i].Volume %>
+            </code>
           </td>
           <td scope="row">
             <%= data.result[i].BaseVolume %>
           </td>
           <td scope="row">
-            <%= data.result[i].TimeStamp %>
-          </td>
+            <code style="color:green">
+              <%= data.result[i].TimeStamp %>
+            </code>
+              </td>
           <td scope="row">
             <%= data.result[i].Bid %>
           </td>
